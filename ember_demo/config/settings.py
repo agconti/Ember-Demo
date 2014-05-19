@@ -48,12 +48,16 @@ class Common(Configuration):
         'south',  # Database migration helpers:
         'crispy_forms',  # Form layouts
         'avatar',  # for user avatars
+        'rest_framework',
     )
 
     # Apps specific for this project go here.
     LOCAL_APPS = (
         'users',  # custom users app
         # Your stuff: custom apps go here
+        'core',
+        'api',
+
     )
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
