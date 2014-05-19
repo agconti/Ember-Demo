@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath="$PWD/ember_demo" config.wsgi:application
