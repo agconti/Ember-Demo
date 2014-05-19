@@ -17,7 +17,7 @@ class Product(TimeStampedModel):
 class Review(TimeStampedModel):
 
     text = models.CharField(max_length=100)
-    product = models.ForeignKey(related_name='reviews')
+    product = models.ForeignKey(Product, related_name='reviews')
 
     def __unicode__(self):
         return "Review of %s" % (self.product.title)
