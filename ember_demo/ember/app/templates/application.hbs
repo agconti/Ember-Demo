@@ -1,5 +1,14 @@
 <div>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        {{#link-to "index" class="navbar-brand"}}<img src="/images/logo.png" alt="logo" width=35px>{{/link-to}}
+        <p>The T-Shirt Store</p>
+            <ul class="nav navbar-nav navbar-right">
+                {{#link-to 'index' tagName='li'}}Home{{/link-to}}
+                {{#link-to 'about' tagName='li'}}About{{/link-to}}
+                {{#link-to 'products' tagName='li'}}Products{{/link-to}}
+            </ul>
+    </div>
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -7,28 +16,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Your App</a>
-        </div>
+                     </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
         </div>
     </nav>
-    <div class="container" id="main">
-        <div class="row">
-            <div>
-                <div class="col-md-3">
-                    <div class="well sidebar-nav">
-                        <strong>Colors</strong>
-                        <ul class="list-group">
-                        {{#each item in controller}}
-                            <li class="list-group-item">{{item}}</li>
-                        {{/each}}
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-9">
-                    {{outlet}}
-                </div>
-            </div>
+    <main class="container">
+        <div class="col-md-9">
+            {{outlet}}
         </div>
-    </div>
+    </main>
+    <footer class="container">
+        <p class='pull-left'>&copy; 2013 The Flint &amp; Flame</p>
+        <p class='pull-right'><a href='#/credits'>Credits</a></p>
+    </footer>
 </div>
