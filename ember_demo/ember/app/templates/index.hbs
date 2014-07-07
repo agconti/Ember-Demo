@@ -1,3 +1,23 @@
-<div class="well">
-    Welcome to Yeoman and Ember.js!
-</div>
+<div class="jumbotron">
+    <h1>Welcome to The Flint &amp; Flame!</h1>
+    <p class="tagline">Everything you need to make it through the winter.</p>
+    <p>{{#link-to 'products' class='btn btn-primary btn-lg'}}Browse All {{productCount}} Items &raquo;{{/link-to}}</p>
+  </div>
+
+  <div class="body-content">
+    <div class="row">
+      {{#each onSale}}
+        <div class='col-sm-4'>
+          <img {{bind-attr src='image'}} class='img-thumbnail col-sm-5'/>
+          <div class='col-sm-7'>
+            <h2>{{title}}</h2>
+            <div class="labels">
+              {{#if isOnSale }}<span class="label label-warning">{{#link-to 'products.onsale'}}On Sale{{/link-to}}</span>{{/if}}
+            </div>
+            <p class="product-description">{{description}}</p>
+            <p>{{#link-to 'product' this class='btn btn-success'}}Buy for ${{price}}{{/link-to}}</p>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
